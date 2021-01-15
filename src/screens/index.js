@@ -1,11 +1,9 @@
 import Login from './Login'
 import Signup from './Signup'
-import Dashboard from './Dashboard'
-import DashboardTest from './DashboardTest'
+import HomePage from './HomePage'
 
 export {
     Login,
     Signup,
-    Dashboard,
-    DashboardTest
+    HomePage,
 }

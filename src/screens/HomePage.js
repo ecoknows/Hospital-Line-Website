@@ -1,12 +1,18 @@
 import React from 'react'
 import { Container, Row, Col, Image, Navbar, Accordion, useAccordionToggle } from 'react-bootstrap'
-import '../css/dashboard.css'
+import { BrowserRouter as Router, Link, Route, Switch, useRouteMatch } from 'react-router-dom'
+import '../css/homepage.css'
+import {Appointment, Dashboard} from './sub_screens'
 
-export default function Dashboard() {
+export default function HomePage() {
+    let { path } = useRouteMatch();
     return (
         <div>
             <Nav/>
-            <Side/>
+            <Row>
+                <Side path={path}/> 
+                <Main path={path}/>
+            </Row>
         </div>
     )
 }
@@ -14,27 +20,27 @@ function Nav(){
     return(
         <Navbar className='justify-content-between' fixed="top" bg="white">
             <Navbar.Brand className='d-flex align-items-center'>
-                <Image src='Images/Logo.png'/>
+                <Image src='/Images/Logo.png'/>
                 <span className='hospital_text'>HOSPITAL </span>
                 <span className='line_text'>LINE</span>
             </Navbar.Brand>
             <Navbar.Brand>
-                <img src='Images/profile.jpg' className='profile_img'/>
+                <img src='/Images/profile.jpg' className='profile_img'/>
             </Navbar.Brand>
         </Navbar>
     )
 }
 
-function Side(){
+function Side({path}){
     return(
         <div className='side_bar'>
-            <div className='d-flex align-items-center sidebar_button' style={{backgroundColor:'#1E78B1'}}>
-                <img src="Images/DashIcon.png" alt="Dashboard Icon"/>
+            <Link to={path} className='d-flex align-items-center sidebar_button' style={{backgroundColor:'#1E78B1'}}>
+                <img src="/Images/DashIcon.png" alt="Dashboard Icon"/>
                 <span className="sidebar_txt">Dashboard</span>
-            </div>
+            </Link>
             
             <Accordion>
-                    <SideToggle eventKey="0" img="Images/CapacityIcon.png">
+                    <SideToggle eventKey="0" img="/Images/CapacityIcon.png">
                         Capacity    
                     </SideToggle>
                     
@@ -46,13 +52,13 @@ function Side(){
                     </Accordion.Collapse>
             </Accordion>
 
-            <div className='d-flex align-items-center sidebar_button'>
-                <img src="Images/AppointmentIcon.png" alt="Dashboard Icon"/>
+            <Link to={`${path}/appointment`} className='d-flex align-items-center sidebar_button'>
+                <img src="/Images/AppointmentIcon.png" alt="Dashboard Icon"/>
                 <span className="sidebar_txt">Appointment</span>
-            </div>
+            </Link>
 
             <Accordion>
-                    <SideToggle eventKey="0" img="Images/teamIcon.png">
+                    <SideToggle eventKey="0" img="/Images/teamIcon.png">
                         Team    
                     </SideToggle>
                     
@@ -65,7 +71,7 @@ function Side(){
             </Accordion>
 
             <Accordion>
-                    <SideToggle eventKey="0" img="Images/availabilityIcon.png">
+                    <SideToggle eventKey="0" img="/Images/availabilityIcon.png">
                         Available    
                     </SideToggle>
                     
@@ -79,7 +85,7 @@ function Side(){
 
             
             <div className='d-flex align-items-center sidebar_button'>
-                <img src="Images/AccountIcon.png" alt="Dashboard Icon"/>
+                <img src="/Images/AccountIcon.png" alt="Dashboard Icon"/>
                 <span className="sidebar_txt">Account</span>
             </div>
 
@@ -87,10 +93,13 @@ function Side(){
     )
 }
 
-function Main(){
+function Main({path}){
     return(
         <Col className='main'>
-            eco
+            <Switch>
+                <Route path={path} component={Dashboard} exact/>
+                <Route path={`${path}/appointment`}component={Appointment}/>
+            </Switch>
         </Col>
     )
 }
