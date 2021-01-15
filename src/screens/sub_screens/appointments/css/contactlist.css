@@ -1,0 +1,44 @@
+.contact_card{
+    height: 93%;
+    width: 96%;
+}
+
+.contactlist_status_circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts_table_e{
+    overflow: auto;
+}
+.contacts_table_header{
+    position: sticky;
+    top: -1px;
+    background-color: white;
+}
+.contacts_table_header h1{
+    color: #414141;
+    font-family: 'Open Sans';
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.contactlist_status_circle img{
+    height: 12px;
+    width: 12px;
+}
+
+.contact_td{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.contact_td h1{
+    font-size: 1.6em;
+    text-align: center;
+}

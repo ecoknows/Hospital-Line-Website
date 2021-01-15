@@ -16,22 +16,22 @@
     color: #1DA6FD;
 }
 .profile_img{
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    border: 1px #064a74 solid;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
 }
 
 .side_bar{
     min-height: 100vh;
     width: fit-content;
-    padding-top:75px;
+    padding-top:70px;
     background-color: #1DA6FD;
 }
 .main{
-    min-height: 100vh;
+    height: 100vh;
+    /* background-color: red; */
     width: 100%;
-    padding-top:75px;
+    padding-top:70px;
 }
 
 .sidebar_txt{

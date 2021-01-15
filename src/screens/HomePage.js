@@ -3,7 +3,8 @@ import { Container, Row, Col, Image, Navbar, Accordion, useAccordionToggle } fro
 import { BrowserRouter as Router, Link, Route, Switch, useRouteMatch } from 'react-router-dom'
 import AngleArrow from '../components/AngleArrow'
 import '../css/homepage.css'
-import {Appointment, Dashboard} from './sub_screens'
+import {Appointment, Dashboard} from './sub_screens';
+import {DoctorList, ContactList} from './sub_screens/appointments';
 
 export default function HomePage() {
     let { path } = useRouteMatch();
@@ -26,7 +27,7 @@ function Nav(){
                 <span className='line_text'>LINE</span>
             </Navbar.Brand>
             <Navbar.Brand>
-                <img src='/Images/profile.jpg' className='profile_img'/>
+                <img src='/Images/prof.png' className='profile_img'/>
             </Navbar.Brand>
         </Navbar>
     )
@@ -133,7 +134,9 @@ function Main({path}){
         <div className='main'>
             <Switch>
                 <Route path={path} component={Dashboard} exact/>
-                <Route path={`${path}/appointment`}component={Appointment}/>
+                <Route path={`${path}/appointment`}component={Appointment} exact/>
+                <Route path={`${path}/appointment/doctorlist`}component={DoctorList} exact/>
+                <Route path={`${path}/appointment/doctorlist/persons`}component={ContactList} exact/>
             </Switch>
         </div>
     )

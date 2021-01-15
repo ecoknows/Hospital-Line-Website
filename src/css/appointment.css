@@ -1,0 +1,26 @@
+.circle_notif{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #00CF87;
+    font-family: 'Open Sans';
+    color:white
+}
+.table_e{
+    overflow: auto;
+    height: 100%;
+}
+.table_header{
+    position: sticky;
+    top: -1px;
+    background-color: white;
+}
+.table_header h1{
+    color: #414141;
+    font-family: 'Open Sans';
+    font-size: 1.5em;
+    text-align: center;
+}
