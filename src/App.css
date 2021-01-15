@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+html{
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    height: 100%;
+    font-size: 1.6rem;
+}
+/*--- Login ---*/
+/*--- Some are also used in Signup, Forgot Password ---*/
+#FirstPart{
+    width: 100%;
+    height: 100vh;
+}
+.LogoPart{
+    background-color: #EBF8FF;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.container-fluid, .row{
+    margin: 0% !important;
+    height: 100%;
+    padding: 0 !important;
+}
+
+.RightSide1{
+    margin-top: auto;
+    margin-bottom: auto;  
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3rem;
+}
+.design{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto; /* to keep proportions */
+    height: auto; /* to keep proportions */
+    max-width: 100%; /* not to stand out from div */
+    max-height: 100%; /* not to stand out from div */
+    margin: auto auto 0; /* position to bottom and center */
+}
+
+.h2-responsive{
+    font-family: 'Teko', sans-serif;
+    color: #ADADAD;
+    font-size: 4rem;
+    margin-bottom: 8%;
+}
+.Line{
+    color: #1DA6FD;
+}
+.SubText{
+    color: #414141;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+}
+.Loginbtn{
+    width: 30%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem !important;
+    border-radius: 20px !important;
+    margin-top: 2rem;
+}
+.FirstForm{
+    margin-top: 10%;
+}
+.FirstInput{
+    border: none !important;
+    border-bottom: 1.5px solid gray !important;
+    width: 70% !important;
+    font-size: 1.5rem !important;
+    color: #9F9F9F !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 2.5rem !important;
+}
+#LoginBlock{
+    font-size: larger;
+}
+hr{
+    height: .10rem;
+    width: 30%;
+    background:#9F9F9F;
+    border: none;
+}
+#FirstHr{
+    position: absolute;
+}
+#SecHr{
+    position: absolute;
+}
+
+.OR {
+    border-bottom:1px solid #9F9F9F;
+    line-height:16px;
+    text-align:center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+}
+.secondSpan{
+    background:#FFF;
+    position:relative;
+    bottom:-8px; /* half of line-height */
+    padding:0 15px;
+}
+.SignupButton{
+    margin-top: 5rem;
+    width: 50%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem !important;
+    border-radius: 20px !important;
+}
+/*--- Login ---*/
+
+/*--- Forgot Password ---*/
+.SecondInput{
+    width: 50% !important;
+    height: 50% !important;
+    border: 1.5px solid #1DA6FD !important;
+    border-radius: 10px !important;
+    font-size: 1.5rem !important;
+    color: #9F9F9F !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 2.5rem !important;
+}
+.FirstLabel{
+    color: #414141;
+    font-size: 1.5rem !important;
+    font-family: 'Open Sans', sans-serif;
+}
+.SubText2{
+    color: #414141;
+    margin-bottom: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+}
+.SecondForm{
+    margin-top: 3%;
+}
+.email{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ChangePass{
+    margin-top: 5%;
+    border-radius: 20px !important;
+    width: 48%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem !important;
+}
+.VerifyInfo{
+    font-family: 'Average Sans', sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: 8%;
+    margin-top: 3%;
+}
+.RightSide2{
+    margin-top: 8%;
+}
+/*--- Forgot Password ---*/
+
+/*--- Change Password ---*/
+.ThirdForm{
+    margin-top: 10% !important;
+}
+
+
+/*--- Change Password ---*/
+
+/*--- Signup ---*/
+.SubText3{
+    color: #414141;
+    margin-bottom: 10%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+}
+.SubText4{
+    color: #1DA6FD;
+    margin-bottom: 2%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+.ThirdForm{
+    margin-top: 3%;
+}
+.ThirdInput{
+    border: none !important;
+    border-bottom: 1.5px solid gray !important;
+    width: 70% !important;
+    font-size: 1.7rem !important;
+    color: #9F9F9F !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+}
+.RightSide3{
+    margin-top: 8% ;
+}
+.Adjust{
+    border: none !important;
+    border-bottom: 1.5px solid gray !important;
+    font-size: 1.7rem !important;
+    color: #9F9F9F !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+    margin-left: 8.5%!important;
+    width: 83% !important;
+    margin-bottom: 2rem !important;
+}
+.True{
+    font-family: 'Average Sans', sans-serif;
+    color: #9F9F9F;
+    font-size: 1.7rem;
+    margin-bottom: 8%;
+}
+.Adjustinput{
+    border: none !important;
+    border-bottom: 1.5px solid gray !important;
+    font-size: 1.7rem !important;
+    color: #9F9F9F !important;
+    width: 70% !important;
+    margin-right: 4rem!important;
+    margin-bottom: 2rem !important;
+    margin-left: 8.5%!important;
+    padding: 0 !important;
+    position: relative;
+}
+.fa-angle-right{
+    position: absolute;
+    right: 9%;
+}
+.Direct{
+    font-size: larger;
+}
+/*--- Signup ---*/
+
+/*--- Security ---*/
+.RightSide4{
+    margin-top: 8% ;
+}
+.SubText5{
+    color: #1DA6FD;
+    margin-bottom: 2%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2rem;
+}
+.FourthForm{
+    margin-top: 6%;
+}
+.SecurityInput{
+    width: 50% !important;
+    height: 50% !important;
+    border: 1.5px solid #1DA6FD !important;
+    border-radius: 10px !important;
+    font-size: 1.5rem !important;
+    color: #9F9F9F !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 2.5rem !important;
+}
+
+/*--- Security ---*/
+
+/*--- Done Signup ---*/
+.RightSide5{
+    margin-top: 10% ;
+}
+.check{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}
+.SubText5{
+    color: #414141;
+    margin-bottom: 2%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2rem;
+}
+.SubText4{
+    color: #414141;
+    margin-bottom: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+}
+/*--- Done Signup ---*/

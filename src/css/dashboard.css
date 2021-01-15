@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+.hospital_text{
+    font-size: 3rem;
+    font-family: 'Teko', sans-serif;
+    color: #7A7A7A;
+    white-space: pre;
+}
+.line_text{
+    font-size: 3rem;
+    font-family: 'Teko', sans-serif;
+    color: #1DA6FD;
+}
+.profile_img{
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: 1px #064a74 solid;
+}
+
+.side_bar{
+    min-height: 100vh;
+    width: fit-content;
+    padding-top:75px;
+    background-color: #1DA6FD;
+}
+.main{
+    min-height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+
+.sidebar_txt{
+    color: white;
+    font-size: 15px;
+    padding-left: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    height:21px;
+}
+
+
+.sidebar_subcollapse{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.sidebar_button{
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.text-white{
+    padding-top: 1.5rem;
+    padding-left: 2rem;
+    text-align: right !important;
+}

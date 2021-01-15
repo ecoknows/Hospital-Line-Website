@@ -1,0 +1,727 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+html{
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 100% !important;
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    height: 100%;
+    min-height: 100% !important;
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+/*--Navbar --*/
+.navbar{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    position: relative;
+}
+.btn-primary{
+    border-radius: 100% !important;
+    width: 50px !important;
+    height: 50px !important;
+    margin-right: 1.5rem !important;
+}
+.text-center{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.h3-responsive{
+    font-size: 20px;
+}
+.btn{
+    display: block;
+    position: absolute;
+    right: 0 !important;
+}
+.ulCollapse{
+    background-color: #1E78B1;
+    padding: 1rem;
+}
+.ulCollapse li{
+    margin-left: 1rem;
+}
+.ulCollapse .feature{
+    color: white;
+    font-size: 1.5rem;
+}
+.navbar-brand{
+    font-size: 3rem !important;
+    font-family: 'Teko', sans-serif;
+    color: #7A7A7A !important;
+}
+.navbar-brand span{
+    color: #1DA6FD !important;
+}
+.navbar-brand h1{
+    display: block;
+    text-align: right;
+}
+/*--Navbar --*/
+
+/*--Side Nav --*/
+.sideContainer{
+    min-height: 100vh;
+    width: 25vh;   
+    padding: 0;
+
+}
+.row{
+    margin-left:0 !important;
+    margin-right:0 !important;
+    width: 25vh;
+    margin-top: 8rem;
+}
+.list-group-item{
+    background-color: transparent !important;
+    border: none !important;
+}
+.IconAdjust{
+    padding-top: 1rem;
+    padding-left: 1.2rem;
+}
+.IconAdjust2{
+    padding-top: 1rem;
+    padding-left: .8rem;
+}
+.IconName{
+    color: white;
+    font-size: 17px !important;
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+.text-white{
+    padding-top: 1.5rem;
+    padding-left: 2rem;
+    text-align: right !important;
+}
+#sideitems{
+    background-color: #1DA6FD !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+}
+.subcollapsed{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+.active{
+    background-color: #1E78B1 !important;
+}
+.title{
+    position: absolute;
+    margin-left: 25vh;
+    margin-top: 0rem;
+    background-color: #EAEDEE;
+    padding: 35px;
+    height: 90px;
+    width: 100%;
+    z-index: 2;
+}
+.title h2{
+    color: #1DA6FD;
+    margin-left: 70px;
+    font-weight: bold;
+}
+/*--Side Nav --*/
+
+/*-- Media Query --*/
+@media screen and (max-width: 767px){
+    .navbar-brand{
+        display: block !important;
+        width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center;
+        
+    }
+    .navbar-brand img{
+        display: none;
+    }
+    .title{
+        height: 130px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center;
+    }
+    .search-doc{
+        margin-top: 40px;
+        margin-right: 200px;
+    }
+    #Dashboard-Content{
+        margin: 0 !important;
+    }
+    #Appointment{
+        overflow-y: scroll;
+        margin-top: auto !important;
+        margin-left: auto !important;
+        height: 100% !important;
+        padding-top: 150px;
+        padding-left: 50px;
+    }
+    #Dashboard-Content, #Account, #Patients, #Beds, #Doctors, #Nurses{
+        overflow-y: scroll;
+        margin-top: auto !important;
+        margin-left: auto !important;
+        height: 100% !important;
+        padding-top: 150px;
+        padding-left: 50px;
+    }
+    #Account img.img1{
+        width: 350px !important;
+        height: 240px !important;
+    }
+    #Nurse-Update, #Doctor-Update, #Bed-Update, #Patient-Update{
+        overflow-y: scroll;
+        margin-top: auto !important;
+        margin-left: auto !important;
+        height: 100% !important;
+        padding-top: 150px;
+        padding-left: 50px;
+    }
+    #icon{
+        width: 350px !important;
+        height: 240px !important;
+        background-position: 120px 50px !important;
+        background-size: 150px !important;
+    }
+}
+@media screen and (max-width: 357px){
+    .navbar-brand{
+        width: 60% !important;
+        margin-left: 1rem !important;
+    }
+}
+/*-- Media Query --*/
+
+
+/*-- Account Design --*/
+#Account{
+    margin-top: -600px;
+    margin-left: 40vh;
+    padding-right: 300px !important;
+    margin-bottom: 450px !important;
+    overflow-y: auto !important;
+    height: 100vh;
+    width: 100%;
+} 
+#Account img.img1{
+    margin-top: 0px;
+    left: 50px;
+}
+.visual{
+    display: block;
+}
+.content{
+    margin-right: 200px !important;
+}
+.rowacc{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+    align-items: center;
+    margin-bottom: 300px;
+}
+.rowacc.center{
+    justify-content: center;  
+}
+
+/*-- Account Design --*/
+/*-- Capacity and Team Design--*/
+#Patients, #Beds, #Doctors, #Nurses{
+    margin-top: -670px;
+    margin-left: 30vh;
+    padding-right: 300px !important;
+    margin-bottom: 450px !important;
+    overflow-y: auto;
+    height: 100vh;
+}
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    'main';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+    width: 100%;
+}
+main{
+    grid-area: main;
+    padding: 1rem;
+}
+img.statpic{
+    position: relative;
+    top: -65px;
+    left: 50px;
+}
+.card-stat{
+    line-height: 300px !important;
+    align-items: center;
+    width: 316px;
+    height: 167px;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 150px;
+}
+.cardstat-body{
+    padding: 1rem;
+}
+.cardstat-body > *{
+    margin-bottom: 0.5rem;
+}
+.cardstat-body p{
+    margin-left: 160px;
+    margin-top: -400px;
+    font-size: 25px;
+    color: black;
+}
+.rowpa{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+    align-items: center;
+    margin-bottom: 300px;
+}
+.rowacc.center{
+    justify-content: center;  
+}
+.calendar{
+    border: 1px solid rgba(0, 0, 0, 0.224);
+    box-sizing: border-box;
+    border-radius: 21px;
+    width: 200px;
+    height: 50px;
+}
+.calendar img{
+    width: 35px;
+    height: 35px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+.button{
+    width: 200px;
+    height: 70px;
+    border: 1px solid rgba(0, 0, 0, 0.224);
+    box-sizing: border-box;
+    border-radius: 21px;
+}
+.button p{
+    font-weight: bold;
+    font-size: 20px;
+    color: #1DA6FD;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.statement{
+    position: relative;
+    top: 50px;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.59);
+}
+/*-- Capacity and Team Design--*/
+/*-- Capacity and Team Update Design--*/
+#Nurse-Update, #Doctor-Update, #Bed-Update, #Patient-Update{
+    margin-top: -670px !important;
+    margin-left: 30vh;
+    padding-right: 300px !important;
+    margin-bottom: 350px !important;
+    overflow-y: auto;
+    height: 100% !important;
+}
+.status-update{
+    position: relative;
+    width: 316px;
+    height: 167px;
+    margin-top: 200px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.status-update img{
+    position: relative;
+    left: 40px;
+    top: 45px;
+}
+.save-button{
+    position: relative;
+    width: 244px;
+    height: 81px;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    border-radius: 21px;
+}
+.save-button p{
+    position: relative;
+    top: 20px;
+    left: 45px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1DA6FD;
+}
+.cancel-button{
+    position: relative;
+    width: 244px;
+    height: 81px;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    border-radius: 21px;
+}
+.cancel-button p{
+    position: relative;
+    top: 20px;
+    left: 80px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1DA6FD;
+}
+.number{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-top: 30px;
+    margin-left: 80px;
+    background: #FFFCFC;
+    border: 1px solid rgba(0, 0, 0, 0.53);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.number p{
+    position: relative;
+    top: 5px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.plus{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+.minus{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+.operation{
+    display: flex !important;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+.update-statement{
+    margin-top: 150px;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.59);
+}
+.calendar-update{
+    border: 1px solid rgba(0, 0, 0, 0.224);
+    box-sizing: border-box;
+    border-radius: 21px;
+    width: 200px;
+    height: 50px;
+}
+.calendar-update img{
+    width: 35px;
+    height: 35px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+/*-- Capacity and Team Update Design--*/
+/*-- Dashbaord-Content--*/
+#Dashboard-Content{
+    margin-top: -670px;
+    margin-left: 30vh;
+    padding-right: 300px !important;
+    margin-bottom: 450px !important;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100%;
+}
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    'main';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+    width: 100%;
+}
+main{
+    grid-area: main;
+    padding: 1rem;
+}
+.rowdash{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+    align-items: center;
+    margin-bottom: 200px;
+}
+.rowdash.center{
+    justify-content: center;
+    
+}
+.rowdash a:hover{
+    text-decoration: none;
+}
+
+#Dashboard-Content img.dash-pic{
+    position: relative;
+    top: -65px;
+    left: 50px;
+}
+.card-dash{
+    line-height: 300px !important;
+    align-items: center;
+    width: 316px !important;
+    height: 167px;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.carddash-body{
+    padding: 1rem;
+}
+.carddash-body > *{
+    margin-bottom: 0.5rem;
+}
+.carddash-body p{
+    margin-left: 160px;
+    margin-top: -400px;
+    font-size: 25px;
+    color: black;
+}
+/*-- Dashbaord-Content--*/
+/*-- Appointment --*/
+#Appointment{
+    margin-top: -670px;
+    margin-left: 30vh;
+    padding-right: 300px !important;
+    margin-bottom: 450px !important;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100%;
+}
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    'main';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+    width: 100%;
+}
+main{
+    grid-area: main;
+    padding: 1rem;
+}
+.rowapp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+    align-items: center;
+    margin-bottom: 200px;
+}
+.rowapp.center{
+    justify-content: center;
+    
+}
+.rowapp a:hover{
+    text-decoration: none;
+}
+
+#Appointment img.medium{
+    position: absolute;
+    top: 50px;
+}
+.card{
+    line-height: 300px !important;
+    align-items: center;
+    width: 316px !important;
+    height: 203px;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.card-body{
+    padding: 1rem;
+}
+.card-body > *{
+    margin-bottom: 0.5rem;
+}
+.card-body p{
+    font-size: 20px;
+    color: black;
+}
+.dep-stat{
+    position: relative;
+    border-radius: 50%;
+    background: #00CF87;
+    width: 60px;
+    height: 60px;
+    top: -160px;
+    left: 140px;
+    z-index: 1;
+}
+.dep-stat p{
+    position: relative;
+    top: -122px;
+    left: 20px;
+    font-size: 35px;
+    color: white;
+}
+/*-- Appointment --*/
+/*-- Doctor List --*/
+#Doctor-List{
+    margin-top: -650px;
+    margin-left: 30vh;
+    padding-right: 30px !important;
+    margin-bottom: 450px !important;
+    overflow: auto;
+    height: 100vh;
+}
+#Doctor-List img{
+    margin-right: 15px;
+}
+.search-doc img{
+    position: relative;
+    top: -20px;
+    left: 60%;
+    height: 20px;
+    width: 20px;
+}
+.input-doc{
+    position: relative;
+    top: -20px;
+    left: 60%;
+    padding: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646567;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #A0A4A7;
+    background-color: transparent;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+  
+table tr{
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+tr:nth-child(odd){background-color: #F3F3F3}
+  
+table th,
+table td{
+    text-align: left;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 20px;
+}
+  
+table th{
+    background-color: #ffffff;
+    color: #414141;
+    font-weight: bold;
+    font-size: 15px;
+} 
+@media screen and (max-width: 760px) {
+    #Doctor-List{
+        overflow-y: auto;
+        margin-top: auto !important;
+        margin-left: auto !important;
+        height: 100vh !important;
+        padding-top: 150px;
+        padding-left: 50px;
+        padding-right: 20px;
+        width: 100%;
+    }
+    table{
+      border: 0;
+      margin-bottom: 80px !important;
+    }
+    
+    table thead{
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr{
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td{
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before{
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child{
+      border-bottom: 0;
+    }
+}
+/*-- Doctor List --*/
+/*-- Appointment --*/
+/*-- Edit Account --*/
+#icon{
+    margin-top: 0px;
+    left: 50px;
+    /* background-image: url(Images/upload.png); */
+    background-repeat: no-repeat; 
+    background-position: 150px 50px;
+    background-size: 200px;
+    padding-left: 5px;
+}
+#perpmap{
+    margin-top: 0px;
+    left: 50px;
+    /* background-image: url(Images/upload.png); */
+    background-repeat: no-repeat; 
+    background-position: 130px 70px;
+    background-size: 100px;
+    padding-left: 5px;
+}
+#icon2{
+    margin-top: 0px;
+    left: 50px;
+    /* background-image: url(Images/upload.png); */
+    background-repeat: no-repeat; 
+    background-position: 130px 15px;
+    background-size: 50px;
+    padding-left: 5px;
+}
