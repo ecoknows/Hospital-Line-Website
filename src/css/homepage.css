@@ -40,6 +40,7 @@
     padding-left: 1rem;
     font-family: 'Open Sans', sans-serif;
     height:21px;
+    text-decoration: none;
 }
 
 
@@ -63,5 +64,15 @@
 .text-white{
     padding-top: 1.5rem;
     padding-left: 2rem;
-    text-align: right !important;
+    text-align: right;
+}
+
+.main_title{
+    color:#1DA6FD;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Open Sans';
+    font-size: 20px;
+    background-color: #EAEDEE;
 }

@@ -24,7 +24,9 @@ export default function Login() {
                               <input type="password" class="form-control FirstInput" id="PasswordForm" placeholder="Password"/>
                             </div>
                           </div>
-                            <a class="btn btn-primary btn-lg Loginbtn">Login</a>
+                          <Link to="/homepage">
+                             <a class="btn btn-primary btn-lg Loginbtn">Login</a>
+                          </Link>
                     </form>
                     <a href="ForgotPassword.html" id="LoginBlock">Forgot Password?</a>
                     <h2 class="OR">

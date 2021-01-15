@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col, Image, Navbar, Accordion, useAccordionToggle } from 'react-bootstrap'
 import { BrowserRouter as Router, Link, Route, Switch, useRouteMatch } from 'react-router-dom'
+import AngleArrow from '../components/AngleArrow'
 import '../css/homepage.css'
 import {Appointment, Dashboard} from './sub_screens'
 
@@ -9,10 +10,10 @@ export default function HomePage() {
     return (
         <div>
             <Nav/>
-            <Row>
+            <div className='d-flex'>
                 <Side path={path}/> 
                 <Main path={path}/>
-            </Row>
+            </div>
         </div>
     )
 }
@@ -32,9 +33,14 @@ function Nav(){
 }
 
 function Side({path}){
+    const [active, setActive] = useState('Dashboard');
     return(
         <div className='side_bar'>
-            <Link to={path} className='d-flex align-items-center sidebar_button' style={{backgroundColor:'#1E78B1'}}>
+            <Link to={path} 
+            onClick={()=>setActive('Dashboard')}
+            className='d-flex align-items-center sidebar_button' 
+            style={{backgroundColor: active == 'Dashboard' ? '#1E78B1': 'transparent',
+                    textDecoration: 'none' }}>
                 <img src="/Images/DashIcon.png" alt="Dashboard Icon"/>
                 <span className="sidebar_txt">Dashboard</span>
             </Link>
@@ -52,7 +58,11 @@ function Side({path}){
                     </Accordion.Collapse>
             </Accordion>
 
-            <Link to={`${path}/appointment`} className='d-flex align-items-center sidebar_button'>
+            <Link to={`${path}/appointment`}
+            onClick={()=>setActive('Appointment')}
+            className='d-flex align-items-center sidebar_button' style={{ textDecoration: 'none',
+                backgroundColor: active == 'Appointment' ? '#1E78B1': 'transparent'
+            }}>
                 <img src="/Images/AppointmentIcon.png" alt="Dashboard Icon"/>
                 <span className="sidebar_txt">Appointment</span>
             </Link>
@@ -84,10 +94,14 @@ function Side({path}){
             </Accordion>
 
             
-            <div className='d-flex align-items-center sidebar_button'>
+            <Link to={`${path}/account`} 
+            onClick={()=>setActive('Account')}
+            className='d-flex align-items-center sidebar_button' style={{ textDecoration: 'none' 
+            ,backgroundColor: active == 'Account' ? '#1E78B1': 'transparent'
+            }}>
                 <img src="/Images/AccountIcon.png" alt="Dashboard Icon"/>
                 <span className="sidebar_txt">Account</span>
-            </div>
+            </Link>
 
         </div>
     )
@@ -95,12 +109,12 @@ function Side({path}){
 
 function Main({path}){
     return(
-        <Col className='main'>
+        <div className='main'>
             <Switch>
                 <Route path={path} component={Dashboard} exact/>
                 <Route path={`${path}/appointment`}component={Appointment}/>
             </Switch>
-        </Col>
+        </div>
     )
 }
 
@@ -110,13 +124,7 @@ function SideToggle({ children, eventKey, img }) {
       console.log('totally custom!'),
     );
   
-    return (
-        <div className='d-flex align-items-center sidebar_button list-group-item' 
-            onClick={decoratedOnClick}
-        >
-            <img src={img} alt="Dashboard Icon"/>
-            <span className="sidebar_txt">{children}</span>
-            <span className="fa fa-angle-right" style={{fontSize:25, color: 'white'}}></span>
-        </div>
-    );
+    return <AngleArrow img={img} click={decoratedOnClick}>
+                 {children}
+            </AngleArrow>
   }
