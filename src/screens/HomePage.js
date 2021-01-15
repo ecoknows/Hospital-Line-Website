@@ -46,14 +46,20 @@ function Side({path}){
             </Link>
             
             <Accordion>
-                    <SideToggle eventKey="0" img="/Images/CapacityIcon.png">
+                    <SideToggle eventKey="0" img="/Images/CapacityIcon.png"
+                    color={ active == 'Patients' || active == 'Emergency'   ? '#1E78B1': 'transparent'}
+                    >
                         Capacity    
                     </SideToggle>
                     
                     <Accordion.Collapse eventKey="0">
                             <div>
-                                <p className="sidebar_subcollapse">Patients</p>
-                                <p className="sidebar_subcollapse">Emergency Beds</p>
+                                <p className="sidebar_subcollapse"
+                                    style={{backgroundColor:active == 'Patients'   ? '#1a508b': 'transparent'}}
+                                    onClick={()=> setActive('Patients')}>Patients</p>
+                                <p className="sidebar_subcollapse"
+                                    style={{backgroundColor:active == 'Emergency'   ? '#1a508b': 'transparent'}}
+                                    onClick={()=> setActive('Emergency')}>Emergency Beds</p>
                             </div>
                     </Accordion.Collapse>
             </Accordion>
@@ -68,27 +74,42 @@ function Side({path}){
             </Link>
 
             <Accordion>
-                    <SideToggle eventKey="0" img="/Images/teamIcon.png">
+                    <SideToggle eventKey="0" img="/Images/teamIcon.png"
+                    color={ active == 'Doctor' || active == 'Nurse' ? '#1E78B1': 'transparent'}
+                    >
                         Team    
                     </SideToggle>
                     
                     <Accordion.Collapse eventKey="0">
                             <div>
-                                <p className="sidebar_subcollapse">Doctor</p>
-                                <p className="sidebar_subcollapse">Nurse</p>
+                                <p className="sidebar_subcollapse"
+                                    style={{backgroundColor:active == 'Doctor'   ? '#1a508b': 'transparent'}}
+                                    onClick={()=> setActive('Doctor')}
+                                >Doctor</p>
+                                <p className="sidebar_subcollapse"
+                                    style={{backgroundColor:active == 'Nurse'   ? '#1a508b': 'transparent'}}
+                                    onClick={()=> setActive('Nurse')}
+                                >Nurse</p>
                             </div>
                     </Accordion.Collapse>
             </Accordion>
 
             <Accordion>
-                    <SideToggle eventKey="0" img="/Images/availabilityIcon.png">
+                    <SideToggle eventKey="0" img="/Images/availabilityIcon.png"
+                        color={ active == 'Hospital' || active == 'Clinic'  ? '#1E78B1': 'transparent'}
+                        
+                    >
                         Available    
                     </SideToggle>
                     
                     <Accordion.Collapse eventKey="0">
                             <div>
-                                <p className="sidebar_subcollapse">Hospital</p>
-                                <p className="sidebar_subcollapse">Clinic</p>
+                                <p className="sidebar_subcollapse"
+                                    style={{backgroundColor:active == 'Hospital'   ? '#1a508b': 'transparent'}}
+                                    onClick={()=> setActive('Hospital')}>Hospital</p>
+                                <p className="sidebar_subcollapse"
+                                    style={{backgroundColor:active == 'Clinic'   ? '#1a508b': 'transparent'}}
+                                    onClick={()=> setActive('Clinic')}>Clinic</p>
                             </div>
                     </Accordion.Collapse>
             </Accordion>
@@ -119,12 +140,12 @@ function Main({path}){
 }
 
 
-function SideToggle({ children, eventKey, img }) {
+function SideToggle({ children, eventKey, img, color }) {
     const decoratedOnClick = useAccordionToggle(eventKey, () =>
       console.log('totally custom!'),
     );
   
-    return <AngleArrow img={img} click={decoratedOnClick}>
+    return <AngleArrow color={color} img={img} click={decoratedOnClick}>
                  {children}
             </AngleArrow>
   }

@@ -45,6 +45,7 @@
 
 
 .sidebar_subcollapse{
+    cursor: pointer;
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;
     text-align: center;

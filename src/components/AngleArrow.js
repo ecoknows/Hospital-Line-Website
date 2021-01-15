@@ -4,11 +4,15 @@ const styles={
     transition: '0.3s ease-out'
 }
 
-export default function AngleArrow({img, children, click}) {
+export default function AngleArrow({img, children, click,color}) {
     const [anim, setAnim] = useState(0);
     return (
         <div className='d-flex align-items-center sidebar_button' 
-            onClick={()=> {click(); setAnim(anim <= 0 ? 90: 0)}}
+            onClick={()=> {
+                click(); 
+                setAnim(anim <= 0 ? 90: 0);
+            }}
+            style={{backgroundColor:color}}
         >
                 <img src={img} alt="Dashboard Icon"/>
                 <span className="sidebar_txt">{children}</span>
