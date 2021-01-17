@@ -37,7 +37,7 @@ function Departments(){
         <Link to={`${path}/doctorlist`}style={{textDecoration:'none', color:'black'}}>
             <Card style={{height: 150, border:'none'}}>
                 <Card.Body style={{justifyContent:'center', display:'flex'}} >
-                    <img src={item.image} style={{alignSelf:'center'}}/>
+                    <img alt ='department' src={item.image} style={{alignSelf:'center'}}/>
                 </Card.Body>
                 <Card.Body style={{justifyContent:'center', display:'flex'}} >
                     <h1>{item.name}</h1>

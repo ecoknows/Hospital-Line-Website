@@ -81,7 +81,7 @@ function Persons(){
                 <div className='contact_td'>
                     <h1>{item.doctor}</h1>
                     <div className='contactlist_status_circle' style={{justifySelf:'flex-end', backgroundColor: item.status ? 'green': '#C4C4C4'}} >
-                        <img src='/Images/contact_check.png'/>
+                        <img alt='contact check' src='/Images/contact_check.png'/>
                     </div>
                 </div>
             </td>

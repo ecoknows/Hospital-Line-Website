@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Average+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html{
     box-sizing: border-box;
@@ -68,6 +68,7 @@ body{
     color: #414141;
     font-family: 'Roboto', sans-serif;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 .Loginbtn{
     width: 30%;
@@ -84,7 +85,7 @@ body{
     border-bottom: 1.5px solid gray !important;
     width: 70% !important;
     font-size: 1.5rem !important;
-    color: #9F9F9F !important;
+    color: black !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: 2.5rem !important;
@@ -151,6 +152,7 @@ hr{
     margin-bottom: 5%;
     font-family: 'Roboto', sans-serif;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 .SecondForm{
     margin-top: 3%;
@@ -192,22 +194,24 @@ hr{
     margin-bottom: 10%;
     font-family: 'Roboto', sans-serif;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 .SubText4{
     color: #1DA6FD;
     margin-bottom: 2%;
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
+    font-weight: 700;
 }
 .ThirdForm{
     margin-top: 3%;
 }
 .ThirdInput{
-    border: none !important;
-    border-bottom: 1.5px solid gray !important;
+    /* border: none !important; */
+    /* border-bottom: 1.5px solid red !important; */
     width: 70% !important;
     font-size: 1.7rem !important;
-    color: #9F9F9F !important;
+    color: black !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: 1rem !important;
@@ -217,10 +221,10 @@ hr{
     margin-top: 8% ;
 }
 .Adjust{
-    border: none !important;
-    border-bottom: 1.5px solid gray !important;
+    /* border: none !important;
+    border-bottom: 1.5px solid gray !important; */
     font-size: 1.7rem !important;
-    color: #9F9F9F !important;
+    color: black !important;
     margin-right: auto !important;
     padding: 0 !important;
     margin-left: 8.5%!important;
@@ -263,6 +267,7 @@ hr{
     margin-bottom: 2%;
     font-family: 'Roboto', sans-serif;
     font-size: 2.2rem;
+    font-weight: 700;
 }
 .FourthForm{
     margin-top: 6%;
@@ -273,7 +278,7 @@ hr{
     border: 1.5px solid #1DA6FD !important;
     border-radius: 10px !important;
     font-size: 1.5rem !important;
-    color: #9F9F9F !important;
+    color: black !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: 2.5rem !important;
@@ -296,6 +301,7 @@ hr{
     margin-bottom: 2%;
     font-family: 'Roboto', sans-serif;
     font-size: 2.2rem;
+    font-weight: 700;
 }
 .SubText4{
     color: #414141;

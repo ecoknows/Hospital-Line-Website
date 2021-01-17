@@ -50,8 +50,8 @@
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     color: white;
+    text-decoration: none;
 }
-
 .sidebar_button{
     cursor: pointer;
     padding-left: 20px;

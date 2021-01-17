@@ -42,7 +42,7 @@ function DashInfo({img, name, children, color}){
         <Col style={{margin:20}} className='shadow p-3 mb-5 bg-white rounded'>
             <Card style={{height: 150, border:'none'}}>
                 <Card.Body style={{justifyContent:'center', display:'flex'}}> 
-                    <img src={img} style={{alignSelf:'center'}}/>
+                    <img  alt ='dashingo' src={img} style={{alignSelf:'center'}}/>
                     <div className='dashboard_card_text'style={{alignSelf:'center'}}>
                         <h1>{name}</h1>
                         <h1 style={{textAlign:'center', color, fontWeight: 'bold'}}>{children}</h1>

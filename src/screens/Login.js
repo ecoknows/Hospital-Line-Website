@@ -16,12 +16,20 @@ export default function Login() {
                     <form class="FirstForm">
                         <div class="form-group row ">
                             <div class="col-sm-12 ">
-                              <input type="email" class="form-control FirstInput" id="EmailForm" placeholder="Username or Email"/>
+                              <input 
+                                type="email" 
+                                class="form-control FirstInput" 
+                                id="EmailForm"
+                                placeholder="Username or Email"/>
                             </div>
                           </div>
                           <div class="form-group row ">
                             <div class="col-sm-12 ">
-                              <input type="password" class="form-control FirstInput" id="PasswordForm" placeholder="Password"/>
+                              <input 
+                                type="password" 
+                                class="form-control FirstInput" 
+                                id="PasswordForm" 
+                                placeholder="Password"/>
                             </div>
                           </div>
                           <Link to="/homepage">

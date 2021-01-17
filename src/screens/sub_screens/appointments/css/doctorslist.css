@@ -16,7 +16,21 @@
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid #1DA6FD;
 }
 .doctors_tr{
     padding: 100px
+}
+.doctor_input{
+    font-family: 'Open Sans';
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 0.5px solid #a0a4a7;
+    font-size: 15px;
+}
+
+.doctor_input:focus {
+    outline-width: 0;
 }

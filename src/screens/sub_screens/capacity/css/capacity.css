@@ -1,0 +1,51 @@
+.capacity_body{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center;
+    align-items: center; */
+
+    height: 80%;
+}
+.capacity_input{
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Open Sans';
+    border-color: rgb(143, 143, 143);
+    box-shadow: none;
+    border-style: solid;
+    border-width: 0.3px;
+    font-size: 20px;
+    height: auto;
+    margin-top: 20px;
+}
+.capacity_input:focus {
+    outline-width: 0;
+}
+.capacity_text{
+    font-size: 20px;
+    color: rgb(121, 121, 121);
+    margin-top: 20px;
+}
+.calendar span{
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-left: 10px;
+    color:rgb(58, 58, 58)
+}
+.calendar img{
+    height: 25px;
+    width: 25px;
+}
+.capacity_save span{
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #1da6fd
+}
+.capacity_img{
+    height: 60px;
+    width: 60px;
+}

@@ -19,6 +19,7 @@ export default function AngleArrow({img, children, click,color}) {
                 <div style={{alignItems: 'flex-end', width:'100%', justifyContent: 'flex-end', display:'flex' }}>
                     <img 
                         src='/Images/angle_right.png' 
+                        alt='angle_right'
                         style={{...styles, transform: `rotate(${anim}deg)`, 
                             height: 15,
                             width: 15,

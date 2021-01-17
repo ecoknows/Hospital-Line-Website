@@ -1,0 +1,18 @@
+.add_botton{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #1DA6FD;
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+}
+.pic_profile{
+    height: 40px;
+    width: 40px;
+    border: 1px solid #1DA6FD;
+    border-radius: 50%;
+}
+.team_doctor_input{
+    font-size: 20px;
+}

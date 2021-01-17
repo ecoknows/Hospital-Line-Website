@@ -1,44 +1,50 @@
 import React from 'react'
-import {Row, Col, Card, Table} from 'react-bootstrap'
+import {Table} from 'react-bootstrap'
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import './css/doctorslist.css'
 
 
 const data = [
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: '', name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
+    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
 ]
 
 
 export default function DoctorList() {
     return (
         <div style={{height: '85%'}} >
-            <div className='main_title' >
+            <div className='main_title' style={{display:'grid',gridTemplateColumns: 'auto auto'}} >
                 DOCTOR LIST  
+                <div style={{justifySelf:'flex-end', 
+                    width: '50%'
+                }}>
+                <img alt='search' src='/Images/search.png' style={{width: 20, height: 20, marginRight: 5}}/>
+                <input className='doctor_input' placeholder='Search Doctor'/>
+                </div>
             </div>
             <div className='table_e'>
                 
@@ -70,8 +76,8 @@ function Doctors(){
     const items = data.map((item, index)=>
         <tr onClick={()=>history.push(`${path}/persons`)}>
             <td>
-                <div className='doctors_td'>
-                    <img src='/Images/appointment/avatar.png'/>
+                <div className='doctors_td' style={{justifyContent:'flex-start', marginLeft: 50}}>
+                    <img alt='doctor_profile' src={item.image == null ? '/Images/avatar.png' : item.image}/>
                 <h1>{item.name}</h1>
                 </div>
             </td>
