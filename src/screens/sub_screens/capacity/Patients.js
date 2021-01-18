@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
+import { useAuth } from '../../../context/AuthContext';
+import { const_data } from '../../../data';
 import './css/capacity.css'
 
 const data = {
@@ -9,12 +11,14 @@ const data = {
 
 export default function Patients() {
     const [update, setUpdate] = useState(false);
-    const [value, setValue] = useState(data.quantity.toString());
-    const [patientsVal, setPatientsVal] = useState(data.quantity.toString())
-    
+    const [value, setValue] = useState(const_data.dataOfHospital.data.patients.toString());
+    const [patientsVal, setPatientsVal] = useState(const_data.dataOfHospital.data.patients.toString())
+    const {updateHospital} = useAuth();
+
     const SaveChanges =()=>{
         setUpdate(false)
         setPatientsVal(value)
+        updateHospital({patients: value})
     }
 
     return (

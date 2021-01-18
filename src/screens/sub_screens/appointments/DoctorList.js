@@ -1,40 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Table} from 'react-bootstrap'
-import { useRouteMatch, useHistory } from 'react-router-dom';
+import { useRouteMatch, useHistory, useLocation } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
 import './css/doctorslist.css'
 
-
-const data = [
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-    {image: null, name:'Dr. Sany Lapuz', department: 'Dermetology', pending: 5},
-]
-
-
+let _location = null;
 export default function DoctorList() {
+
+    const [data, setData] = useState();
+    const location = useLocation();
+    const { getDoctorList,searchDoctorList } = useAuth();
+
+    useEffect(()=>{
+        if(location?.data){
+            _location = location.data
+            getDoctorList(location.data).then(result=>{
+                setData(result);
+            })
+        }else if(_location != null){
+            getDoctorList(_location).then(result=>{
+                setData(result);
+            })
+        }
+    },[]);
+
     return (
         <div style={{height: '85%'}} >
             <div className='main_title' style={{display:'grid',gridTemplateColumns: 'auto auto'}} >
@@ -43,7 +32,14 @@ export default function DoctorList() {
                     width: '50%'
                 }}>
                 <img alt='search' src='/Images/search.png' style={{width: 20, height: 20, marginRight: 5}}/>
-                <input className='doctor_input' placeholder='Search Doctor'/>
+                <input className='doctor_input' placeholder='Search Doctor'
+                    onChange={e=>{
+                        console.log(e.target.value , ' ', location.data);
+                        searchDoctorList(location.data , e.target.value.toLowerCase()).then(result=>{
+                            setData(result)
+                        });
+                    }}
+                />
                 </div>
             </div>
             <div className='table_e'>
@@ -62,7 +58,7 @@ export default function DoctorList() {
                             </th>
                         </tr>
                     </thead> 
-                    <Doctors/>
+                    <Doctors data={data} location={location}/>
                 </Table>
             </div>
         </div>
@@ -70,25 +66,25 @@ export default function DoctorList() {
 }
 
 
-function Doctors(){
+function Doctors({data, location}){
     const { path } = useRouteMatch();
     const history = useHistory();
-    const items = data.map((item, index)=>
+    const items = data?.map((item, index)=>
         <tr onClick={()=>history.push(`${path}/persons`)}>
             <td>
                 <div className='doctors_td' style={{justifyContent:'flex-start', marginLeft: 50}}>
-                    <img alt='doctor_profile' src={item.image == null ? '/Images/avatar.png' : item.image}/>
-                <h1>{item.name}</h1>
+                    <img alt='doctor_profile' src={item.image == null? '/Images/avatar.png' : item.image}/>
+                <h1>Dr. {item.firstname} {item.lastname}</h1>
                 </div>
             </td>
             <td>
                 <div className='doctors_td'>
-                    <h1>{item.department}</h1>
+                    <h1>{location?.data}</h1>
                 </div>
             </td>
             <td >
                 <div className='doctors_td'>
-                    <h1>{item.pending} pending</h1>
+                    <h1>10 pending</h1>
                 </div>
             </td>
         </tr>

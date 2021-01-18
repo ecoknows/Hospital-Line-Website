@@ -1,7 +1,8 @@
 import React from 'react'
 import {Row, Col, Card} from 'react-bootstrap'
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch, useHistory } from 'react-router-dom';
 import '../../css/appointment.css'
+import { const_data } from '../../data';
 
 
 const data = [
@@ -17,6 +18,8 @@ const data = [
 
 
 export default function Appointment() {
+    
+
     return (
         <div style={{position:'fixed', height: '78%'}} >
             <div className='main_title' >
@@ -32,21 +35,23 @@ export default function Appointment() {
 
 function Departments(){
     const { path } = useRouteMatch();
-    const items = data.map((item, index)=>
+    const history = useHistory();
+    const data_tomap = const_data.dataOfHospital.data.departments;
+    const items = data_tomap.map((item, index)=>
     <Col lg="3" key={index.toString()} style={{margin:20, cursor:'pointer'}} className='shadow p-3 mb-5 bg-white rounded'>
-        <Link to={`${path}/doctorlist`}style={{textDecoration:'none', color:'black'}}>
-            <Card style={{height: 150, border:'none'}}>
+        
+            <Card style={{height: 150, border:'none'}}
+                onClick={()=>history.push({pathname:`${path}/doctorlist`, data: const_data.departments[item].title})}
+            >
                 <Card.Body style={{justifyContent:'center', display:'flex'}} >
-                    <img alt ='department' src={item.image} style={{alignSelf:'center'}}/>
+                    <img alt ='department' src={const_data.departments[item].image} style={{alignSelf:'center'}}/>
                 </Card.Body>
                 <Card.Body style={{justifyContent:'center', display:'flex'}} >
-                    <h1>{item.name}</h1>
+                    <h1>{const_data.departments[item].title}</h1>
                 </Card.Body>
             </Card>
-        </Link>
-        
-        { item.notif > 0 ?<div className='circle_notif d-flex justify-content-center align-items-center'>
-                <h1>{item.notif}</h1>
+        { const_data.dataOfHospital.data.departments_pending[index] > 0 ?<div className='circle_notif d-flex justify-content-center align-items-center'>
+                <h1>{const_data.dataOfHospital.data.departments_pending[index] }</h1>
         </div> : null}
     </Col>
     )

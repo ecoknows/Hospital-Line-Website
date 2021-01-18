@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Image, Navbar, Accordion, useAccordionToggle } from 'react-bootstrap'
 import { Link, Route, Switch, useRouteMatch, useHistory } from 'react-router-dom'
 import AngleArrow from '../components/AngleArrow'
@@ -8,12 +8,22 @@ import {DoctorList, ContactList} from './sub_screens/appointments';
 import { Emergency, Patients } from './sub_screens/capacity';
 import { Doctors, Nurses } from './sub_screens/team';
 import { Hospitals, Clinics } from './sub_screens/available';
+import { useAuth } from '../context/AuthContext'
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
+import { const_data } from '../data'
+
 
 export default function HomePage() {
     let { path } = useRouteMatch();
+    const [data,setData] = useState();
+    const {getHomepage} = useAuth();
+    useEffect(()=>{
+        getHomepage(setData);
+    },[])
+
     return (
         <div>
-            <Nav/>
+            <Nav data={data}/>
             <div className='d-flex'>
                 <Side path={path}/> 
                 <Main path={path}/>
@@ -21,7 +31,8 @@ export default function HomePage() {
         </div>
     )
 }
-function Nav(){
+function Nav({data}){
+    const {updateHospital} = useAuth();
     return(
         <Navbar className='justify-content-between' fixed="top" bg="white">
             <Navbar.Brand className='d-flex align-items-center'>
@@ -30,14 +41,20 @@ function Nav(){
                 <span className='line_text'>LINE</span>
             </Navbar.Brand>
             <Navbar.Brand style={{color:'blue'}}>
-                 <input type="checkbox"     
-                  data-toggle="switchbutton"
-                  data-onstyle="success"
-                  data-offstyle="danger"
-                  checked data-size="lg"
-                  checked data-onlabel="Perpetual Help Hospital is Available" 
-                  data-offlabel="Perpetual Help Hospital is Unavailable"
-                  />
+                <div>
+                    {data != null ? <BootstrapSwitchButton
+                        checked={data?.availability}
+                        onlabel={<h1 style={{fontSize: 12}}>{data?.name} is available</h1>}
+                        onstyle='success'
+                        offlabel={<h1 style={{fontSize: 12}}>{data?.name} is unvailable</h1>}
+                        offstyle='danger'
+                        width={data?.name.length * 10 + 20}
+                        onChange={(checked) => {
+                            updateHospital({availability: checked});
+                        }}
+                    />: null}
+                </div>
+           
             </Navbar.Brand>
         </Navbar>
     )
@@ -46,6 +63,10 @@ function Nav(){
 function Side({path}){
     const [active, setActive] = useState('Dashboard');
     const history = useHistory();
+
+    if(const_data.hospitalData.currentUserId== null)
+        history.push('/');
+
     return(
         <div className='side_bar'>
             <Link to={path} 
@@ -161,6 +182,7 @@ function Side({path}){
 }
 
 function Main({path}){
+    
     return(
         <div className='main'>
             <Switch>

@@ -1,38 +1,10 @@
-import React,{useState, useRef} from 'react'
+import React,{useState, useRef, useEffect} from 'react'
 import {Row, Col, Card, Table, Modal, Button, Form} from 'react-bootstrap'
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import { const_data } from '../../../data';
 import './css/team.css'
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
-
-let data = [
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Eco Pogi', department: 'Gastroenterology', status: false},
-    {image: null, name:'Sany Lapuz', department: 'General Medicine', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Pediatrician', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-    {image: null, name:'Sany Lapuz', department: 'Dermetology', status: true},
-]
+import { useAuth } from '../../../context/AuthContext';
 
 let selected_doctor = {index: -1, name:''}
 
@@ -40,6 +12,18 @@ export default function Nurses() {
     
   const [show, setShow] = useState(false);
   const [add, setAdd] = useState(false)
+  const {getDoctorList} = useAuth();
+  const [data,setData] = useState([]);
+
+  
+  useEffect(()=>{
+    const_data.dataOfHospital.data.departments.forEach(element => {
+        const dept = const_data.departments[element].title;
+        getDoctorList(dept).then(result=>{
+            setData((oldData)=>[...oldData, ...result]);
+        })
+    });
+  },[]);
   
   const handleClose = () => {
       setShow(false);
@@ -131,7 +115,7 @@ export default function Nurses() {
                             </th>
                         </tr>
                     </thead> 
-                    <Doctors_List handleShow={handleShow}/>
+                    <Doctors_List handleShow={handleShow} data={data}/>
                 </Table>
             </div>
            
@@ -223,7 +207,7 @@ function DoctorModal ({add, handleAddClose, handleSave}){
     )
 }
 
-function Doctors_List({handleShow}){
+function Doctors_List({handleShow,data}){
     const { path } = useRouteMatch();
     const changeStatus =(item, index)=>{
         handleShow(item,index)
@@ -233,7 +217,7 @@ function Doctors_List({handleShow}){
             <td>
                 <div className='doctors_td' style={{justifyContent:'flex-start', marginLeft: 50}}>
                     <img src={item.image == null ? '/Images/avatar.png' : item.image}/>
-                    <h1>{item.name}</h1>
+                    <h1>Dr. {item.firstname} {item.lastname}</h1>
                 </div>
             </td>
             <td>
@@ -249,7 +233,7 @@ function Doctors_List({handleShow}){
                         }}/> 
                         <span
                             style={{fontFamily:'Open Sans', fontSize: 14,marginLeft: 10}}
-                        >{item.status ? 'on duty': 'rest'}</span>
+                        >{item.availability ? 'on duty': 'rest'}</span>
                 </div>
             </td>
         </tr>

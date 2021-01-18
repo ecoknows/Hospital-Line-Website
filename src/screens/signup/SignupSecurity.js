@@ -11,17 +11,20 @@ export default function SignupSecurity() {
     const [password, setPassword] = useState(_password);
     const [con_password, setCon_Password] = useState(_con_password);
     const [error, setError] = useState('')
-    const {addUser} = useAuth();
+    const {addUser, signUp, signOut} = useAuth();
 
     function CreateAccount(){
         console.log(location.data);
         if(location?.data){
             try{
-                addUser(location.data).then(()=>{
-                    history.push('/signup/done');
-                }).catch((e)=>
-                    setError(e)
-                )
+                signUp(location.data.email,password).then((data)=>{
+                    addUser(location.data, data.user.uid).then(()=>{
+                        signOut();
+                        history.push('/signup/done');
+                    });
+                }).catch((e)=>{
+                    setError(e.message)
+                });
             }catch{
     
             }

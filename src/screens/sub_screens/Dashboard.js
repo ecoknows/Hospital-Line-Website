@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Container, Card, Row, Col} from 'react-bootstrap'
+import { useAuth } from '../../context/AuthContext'
 import '../../css/dashboard.css'
+import { const_data } from '../../data';
 
 export default function Dashboard() {
+    const [data, setData] = useState();
+    const { getDashboard } = useAuth();
+    console.log(const_data.dataOfHospital.data, ' will leave');
+    useEffect(()=>{
+        getDashboard(setData);
+    },[])
+
     return (
         <div style={{height:'100%'}}>
             <div className='main_title'>
@@ -12,24 +21,24 @@ export default function Dashboard() {
             <Container>
                 <Row>
                    <DashInfo img='/Images/team/doctor.png' name='Doctor' color='#4d6db4'>
-                       12
+                       {data?.doctors}
                    </DashInfo>
                    <DashInfo img='/Images/team/nurse.png' name='Nurse' color='#10A6FF'>
-                       12
+                        {data?.nurse}
                    </DashInfo>
                    <DashInfo img='/Images/capacity/hospital-bed.png' name='ER beds' color='#00CF87'>
-                       12
+                        {data?.beds}
                    </DashInfo>
                 </Row>
                 <Row>
                    <DashInfo img='/Images/capacity/medical-records.png' name='Patients' color='#FC6C79'>
-                       12
+                       {data?.patients}
                    </DashInfo>
                    <DashInfo img='/Images/available/hospital.png' name='Hospitals' color='#0C6095'>
-                       12
+                       {data?.hospitals}
                    </DashInfo>
                    <DashInfo img='/Images/available/clinic.png' name='Clinic' color='#7F69D4'>
-                       12
+                       {data?.clinics}
                    </DashInfo>
                 </Row>
             </Container>
